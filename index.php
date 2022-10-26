@@ -84,10 +84,10 @@ if ($_SESSION['status_login']=false) {
             $password = $_POST['password'];
 
             if(empty($username)){
-                echo "<script>alert('Username Tidak Boleh Kosong');location.href='login.php';</script>";
+                echo "<script>alert('Username Tidak Boleh Kosong');location.href='index.php';</script>";
 
             }elseif(empty($password)){
-                echo "<script>alert('Password Tidak Boleh Kosong');location.href='login.php';</script>";
+                echo "<script>alert('Password Tidak Boleh Kosong');location.href='index.php';</script>";
 
             }else{
                 include "koneksi.php";
