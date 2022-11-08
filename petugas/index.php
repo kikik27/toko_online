@@ -36,8 +36,8 @@ if ($_SESSION['petugas']!=true) {
           <div class="card col-4 py-5">
             <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="" class="card-img">
             <div class="card-body" style="text-align: center;">
-              <h4 class="card-text py-3">Data Pelanggan</h4>
-              <a href="pelanggan.php" class="btn btn-warning btn-lg">Go</a></a>
+              <h4 class="card-text py-3">Data Produk</h4>
+              <a href="produk.php" class="btn btn-warning btn-lg">Go</a></a>
             </div>
           </div>
           <div class="card col-4 py-5">
