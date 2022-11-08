@@ -71,6 +71,14 @@ if ($_SESSION['status_login']=false) {
         </div>
 
         <div class="mb-3">
+            <input type="text" name="telp_plggn" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="No Tlpn">
+        </div>
+
+        <div class="mb-3">
+            <input type="text" name="slmt_plggn" class="form-control" id="Username" aria-describedby="emailHelp" placeholder="Alamat">
+        </div>
+
+        <div class="mb-3">
             <input type="password" name="password" class="form-control" id="password" placeholder="Password">
         </div>
 
@@ -106,7 +114,7 @@ if ($_SESSION['status_login']=false) {
             }else{
                 if ($password == $password2){
                     include "koneksi.php";
-                    $tambah = mysqli_query($konn,"insert into user (nama,username,password,profile) value ('$nama','$username','".md5($password)."','$profile')") or die(mysqli_error($konn));
+                    $tambah = mysqli_query($konn,"insert into pelanggan (nama,username,password,profile) value ('$nama','$username','".md5($password)."','$profile')") or die(mysqli_error($konn));
                     if($tambah){
                         echo "<script>alert('Berhasil Daftar');location.href='index.php';</script>";
 

@@ -151,7 +151,7 @@ Tambah Pelanggan
                                         </div>
                                         <div class="modal-body">
                                                 <form action="" method="post">
-                                                <input type="hidden" name="id_pelanggan" value="<?=$dt['id_pelanggan']; ?>">
+                                                <input type="hidden" name="id_pelanggan" value="<?php echo $id?>">
                                                     Nama :
 
                                                     <input type="text" name="nm_plggn" value="<?php echo $nama?>" class="form-control">
@@ -197,35 +197,40 @@ Tambah Pelanggan
 
 <?php
 
-                if(isset($_POST['simpan'])){
+if(isset($_POST['simpan'])){
 
-                    $nama=$_POST['nm_ptgs'];
-                    $username=$_POST['username'];
-                    $password=$_POST['password'];
+    $nama=$_POST['nm_plggn'];
+    $alamat=$_POST['almt_plggn'];
+    $telp=$_POST['telp_plggn'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
 
-                    if(empty($nama)){
-                        echo "<script>alert('nama pelanggan tidak boleh kosong');location.href='petugas.php';</script>";
-                    } elseif(empty($username)){
+    if(empty($nama)){
+        echo "<script>alert('nama pelanggan tidak boleh kosong');location.href='pelanggan.php';</script>";
+    } elseif(empty($alamat)){
 
-                        echo "<script>alert('alamat pelanggan tidak boleh kosong');location.href='petugas.php';</script>";
-                    } elseif(empty($password)){
+        echo "<script>alert('alamat pelanggan tidak boleh kosong');location.href='pelanggan.php';</script>";
+    } elseif(empty($telp)){
 
-                        echo "<script>alert('password tidak boleh kosong');location.href='petugas.php';</script>";
-                    } elseif(empty($level)){
+        echo "<script>alert('telpn pelanggan tidak boleh kosong');location.href='pelanggan.php';</script>";
+    } elseif(empty($username)){
 
-                        echo "<script>alert('level tidak boleh kosong');location.href='petugas.php';</script>";
-                    }   else {
-                        include "koneksi.php";
+        echo "<script>alert('username tidak boleh kosong');location.href='pelanggan.php';</script>";
+    } elseif(empty($password)){
 
-                        $insert=mysqli_query($konn,"insert into petugas (nama_petugas, username, password, level) value ('".$nama."','".$username."','".md5($password)."','petugas')") or die(mysqli_error($konn));
+        echo "<script>alert('password tidak boleh kosong');location.href='pelanggan.php';</script>";
+    } else {
+        include "../koneksi.php";
 
-                        if($insert){
-                            echo "<script>alert('Sukses menambahkan Petugas');location.href='tampil_petugas.php';</script>";
-                        } else {
-                            echo "<script>alert('Gagal menambahkan Petugas');location.href='petugas.php';</script>";
-                        }
-                    }
-                }
+        $insert=mysqli_query($konn,"insert into pelanggan (nama, alamat, telp, username, password) value ('".$nama."','".$alamat."','".$telp."','".$username."','".md5($password)."')") or die(mysqli_error($conn));
+
+        if($insert){
+            echo "<script>alert('Sukses menambahkan pelanggan');location.href='pelanggan.php';</script>";
+        } else {
+            echo "<script>alert('Gagal menambahkan Pelanggan');location.href='pelanggan.php';</script>";
+        }
+    }
+}
 ?>
 
 <?php
@@ -251,39 +256,42 @@ if(isset($_POST['edit'])){
     $password=$_POST['password'];
 
     if(empty($nama)){
-        echo "<script>alert('nama petugas tidak boleh kosong');location.href=' pelanggan.php';</script>";
+        echo "<script>alert('nama pelanggan tidak boleh kosong');location.href='pelanggan.php';</script>";
     } elseif(empty($almt)){
 
-        echo "<script>alert('alamat petugas tidak boleh kosong');location.href=' pelanggan.php';</script>";
+        echo "<script>alert('alamat pelanggan tidak boleh kosong');location.href='pelanggan.php';</script>";
     } elseif(empty($tlp)){
 
-        echo "<script>alert('telpn petugas tidak boleh kosong');location.href='pelanggan.php';</script>";
+        echo "<script>alert('telpn pelanggan tidak boleh kosong');location.href='pelanggan.php';</script>";
     }   elseif(empty($username)){
 
         echo "<script>alert('username tidak boleh kosong');location.href='pelanggan.php';</script>";
     } elseif(empty($password)){
-        include "koneksi.php";
-
+        include "../koneksi.php";
+        
         $update=mysqli_query($konn,"update pelanggan set 
-        nama='$nama',alamat='$almt',telp='$tlp', username='$username' where id_pelanggan = '".$id_pelanggan."'") or die(mysqli_error($konn));
+        nama='$nama',alamat='$almt',telp='$tlp', username='$username' where id_pelanggan = '$id_pelanggan'") or die(mysqli_error($konn));
 
         if($update){
-            echo "<script>alert('Sukses Edit Pelanggan');location.href='pelanggan.php';</script>";
+            echo "<script>alert('Sukses ubah pelanggan');location.href='pelanggan.php';</script>";
         } else {
-            echo "<script>alert('Gagal Edit Pelanggan');location.href='pelanggan.php?id_pelanggan=".$id_pelanggan."';</script>";
+            echo "<script>alert('Gagal ubah pelanggan');location.href='pelanggan.php';</script>";
         }
+
 
     }else {
-        include "koneksi.php";
+        include "../koneksi.php";
 
         $update=mysqli_query($konn,"update pelanggan set 
-        nama='$nama',alamat='$almt',telp='$tlp', username='$username', password='".md5($password)."' where id_pelanggan = '".$id_pelanggan."'") or die(mysqli_error($konn));
+        nama='$nama',alamat='$almt',telp='$tlp', username='$username', password='".md5($password)."' where pelanggan.id_pelanggan = '".$id_pelanggan."'") or die(mysqli_error($konn));
 
         if($update){
-            echo "<script>alert('Sukses Edit Pelanggan');location.href='pelanggan.php';</script>";
+            echo "<script>alert('Sukses ubah pelanggan');location.href='pelanggan.php';</script>";
         } else {
-            echo "<script>alert('Gagal Edit Pelanggan');location.href='pelanggan.php';</script>";
+            echo "<script>alert('Gagal ubah pelanggan');location.href='pelanggan.php';</script>";
         }
+
     }
 }
 ?>
+

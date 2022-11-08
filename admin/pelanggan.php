@@ -268,7 +268,7 @@ if(isset($_POST['edit'])){
         echo "<script>alert('username tidak boleh kosong');location.href='pelanggan.php';</script>";
     } elseif(empty($password)){
         include "../koneksi.php";
-        echo 'sdf';
+        
         $update=mysqli_query($konn,"update pelanggan set 
         nama='$nama',alamat='$almt',telp='$tlp', username='$username' where id_pelanggan = '$id_pelanggan'") or die(mysqli_error($konn));
 
