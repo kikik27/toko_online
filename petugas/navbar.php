@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container col-11">
-            <a class="navbar-brand" href="index.php">PT. DEVARO JAYA</a>
+            <a class="navbar-brand" href="index.php">PT. DEVARO SEJAHTERA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -12,6 +12,8 @@
             <a class="nav-link" href="produk.php">Produk
             </a>
             <a class="nav-link" href="pesanan.php">Pesanan
+            </a>
+            <a class="nav-link" href="laporan.php">Laporan
             </a>
             </ul>
             <form action="" method="post">

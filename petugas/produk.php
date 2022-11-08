@@ -19,18 +19,18 @@ include "navbar.php";
 
   <div class="mb-3">
 
-  <form action="" method="post" class="form-inline py-3" style="float: right">
-    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="<?php
-    if(isset($_POST['cari'])){
-      echo $_POST['search'];
-    }
-    ?>">
-    <button name="cari" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+    <form action="" method="post" class="form-inline py-3" style="float: right">
+      <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="<?php
+      if(isset($_POST['cari'])){
+        echo $_POST['search'];
+      }
+      ?>">
+      <button name="cari" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
-  <button type="button" class="btn btn-success py-3 col-sm-3 mb-3" data-toggle="modal" data-target="#tambah">Tambah Produk</button>
+    <button type="button" class="btn btn-success py-3 col-sm-3 mb-3" data-toggle="modal" data-target="#tambah">Tambah Produk</button>
 
-</div>
+  </div>
 
 
     <div class="row" id="load_data">

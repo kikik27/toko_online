@@ -158,8 +158,8 @@
 
 <?php
 if(isset($_POST['hapus'])){
-    $id = $_POST['id'];
-    $hapus = mysqli_query($konn,"delete from keranjang where id_keranjang='$id'");
+    $id = $_POST['id_keranjang'];
+    $hapus = mysqli_query($konn,"delete from keranjang where id_keranjang='$id'") or die (mysqli_error($konn));
     if ($hapus){
         echo '<script>location.href="index.php"</script>';
     }

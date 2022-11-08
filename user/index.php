@@ -232,7 +232,11 @@ if (isset($_POST['keranjang'])){
   $qty = $_POST['qty'];
   $harganya = $_POST['harga'];
   $total = $harganya * $qty;
-  $keranjang = mysqli_query($konn,"insert into keranjang (id_keranjang,id_user,id_produk,qty,total) value ('NULL','$id_user','$id_produk','$qty','$total')")  or die(mysqli_error($konn));
+  $keranjang = mysqli_query($konn,"insert into keranjang (id_user,id_produk,qty,total) values ('$id_user','$id_produk','$qty','$total')") or die (mysqli_error($konn));
+  if($keranjang){
+    echo '<script>location.href="index.php"</script>';
+
+}
 }
 ?>
 
