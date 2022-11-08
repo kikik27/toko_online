@@ -78,7 +78,7 @@
         }else{
             ?>
             <h2 class="mb-3">History</h2>
-            <table class="table table-hover striped">
+            <table class="table table-hover striped my-5">
             <thead>
 
             <tr>
