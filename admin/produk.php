@@ -251,7 +251,6 @@ if(isset($_POST['simpan'])) {
         $uploadOk = 0;
         }
 
-        echo "asdasd";
         // Check file size
         if ($_FILES["foto"]["size"] > 500000) {
             echo "<script>alert('File foto terlalu besar');location.href='produk.php';</script>";
